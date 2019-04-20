@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
 export default {
   
   mounted() {
@@ -15,10 +16,7 @@ export default {
     }
 
   ,
-  props: {
-    
-    date : String
-  },
+  props: ['date'],
  
 
   data() {
@@ -54,32 +52,35 @@ export default {
 @import url(https://fonts.googleapis.com/css?family=Orbitron);
 
 .block {
-    display: inline-block;
-    /*flex-direction: row;*/
-    /*margin: 20px;*/
+    /*display: inline-block;*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
     position: absolute;
-    width: 180dppx;
+    /*width: 180dppx;*/
     left: 1em;
     text-align: right;
 }
 
-.text {
-    color: #1abc9c;
-    font-size: 40px;
-    font-family: 'Roboto Condensed', serif;
-    font-weight: 400;
-    margin-top:10px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
 .digit {
     color: #f70707;
-    font-size: 180px;
+  
+    /*font-size: 180px;*/
     font-weight: 100;
     font-family: 'Orbitron', sans-serif;
     
    
-    /*text-align: center;*/
+   
 }
+@media screen and (min-width: 320px){
+  .digit{
+    font-size: calc(14px + (180 - 14) * ((100vw - 300px) / (1600 - 300)));
+  }
+}
+@media screen and (min-width: 1000px){
+  .digit{
+    font-size:180px;
+  }
+}
+
 </style>
