@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     
-    <Countdown date="October 3, 2019"/>
+    <Countdown date="September 28, 2019"/>
      
   </div>
 </template>
